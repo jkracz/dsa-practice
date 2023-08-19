@@ -1,3 +1,6 @@
+# practicing function generators
+
+
 def fib(num):
     a = 0
     b = 1
