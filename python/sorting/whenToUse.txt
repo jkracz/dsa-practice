@@ -1,0 +1,29 @@
+What sorting algo to use for each scenario
+
+//#1 - Sort 10 schools around your house by distance:
+insertion sort bc small data set
+
+
+//#2 - eBay sorts listings by the current Bid amount:
+counting or radix bc numbers
+
+//#3 - Sport scores on ESPN
+counting or radix bc numbers
+Could also use quicksort bc space complexity is smaller and there are many different sports
+
+//#4 - Massive database (can't fit all into memory) needs to sort through past year's user data
+mergesort bc of stability and consistent o(nlogn) runtime
+
+
+//#5 - Almost sorted Udemy review data needs to update and add 2 new reviews
+insertion sort bc the collection is almost sorted
+
+//#6 - Temperature Records for the past 50 years in Canada
+counting or radix if no decimal places
+quicksort if decimal to take advantage of space complexity
+
+//#7 - Large user name database needs to be sorted. Data is very random.
+quicksort to save on mem
+
+//#8 - You want to teach sorting for the first time
+bubblesort
