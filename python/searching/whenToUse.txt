@@ -1,0 +1,17 @@
+//If you know a solution is not far from the root of the tree:
+BFS bc it traverses the closest nodes first
+
+//If the tree is very deep and solutions are rare: 
+BFS bc DFS will take a long time to go all the way down
+
+//If the tree is very wide:
+DFS will be less memory intense bc we don't need to keep track of all the children
+
+//If solutions are frequent but located deep in the tree:
+DFS bc it will check the bottom first
+
+//Determining whether a path exists between two nodes:
+DFS
+
+//Finding the shortest path:
+BFS
