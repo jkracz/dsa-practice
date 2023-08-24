@@ -16,11 +16,41 @@ def iterativeFib(num):
     return b
 
 
+slow_calculations = 0
+
+
 def recursiveFib(num):
+    global slow_calculations
+    slow_calculations += 1
     if num == 0 or num == 1:
         return num
     return recursiveFib(num - 1) + recursiveFib(num - 2)
 
 
-print(iterativeFib(12))
-print(recursiveFib(12))
+# to improve the recursive func, we should use memoization
+
+fast_calculations = 0
+
+
+def memoize_fib(func):
+    cache = {}
+
+    def mem_wrapper(num):
+        if num not in cache:
+            global fast_calculations
+            fast_calculations += 1
+            cache[num] = func(num)
+        return cache[num]
+
+    return mem_wrapper
+
+
+@memoize_fib
+def memRecursiveFib(num):
+    if num == 0 or num == 1:
+        return num
+    return memRecursiveFib(num - 1) + memRecursiveFib(num - 2)
+
+
+print(f"SLOW res: {recursiveFib(35)} calcs: {slow_calculations}")
+print(f"FAST res: {memRecursiveFib(100)} calcs: {fast_calculations}")
